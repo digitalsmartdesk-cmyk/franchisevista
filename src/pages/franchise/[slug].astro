@@ -1,0 +1,264 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [{ params: { slug: 'sample-brand' } }];
+}
+
+const { slug } = Astro.params;
+const brandName = slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+---
+<Layout
+  title={`${brandName} Franchise | FranchiseVista`}
+  description={`Enquire about the ${brandName} franchise. View investment, outlet models and what is included, then fill in the form and our team will call you.`}
+>
+
+<section class="hero hero-sub on-dark" aria-labelledby="brand-h1">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/find-a-franchise">Find a franchise</a></li>
+        <li aria-current="page">{brandName}</li>
+      </ol>
+    </nav>
+    <div class="hero-in brand-hero">
+      <div class="brand-tile-lg" role="img" aria-label={`${brandName} logo placeholder`}>
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#F5A000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l1.5-5h15L21 9"/>
+          <path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/>
+          <path d="M5 12v8h14v-8"/>
+          <path d="M10 20v-5h4v5"/>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">Food &amp; Beverage &middot; Sample brand</span>
+        <h1 id="brand-h1">{brandName}</h1>
+        <p class="lead">A quick-service brand operating across India with a proven supply chain and centralised training programme.</p>
+        <ul class="quick-stats" aria-label="Quick stats">
+          <li><span class="qs-label">Investment from</span><strong>₹10 lakh</strong></li>
+          <li><span class="qs-label">Franchise fee</span><strong>₹2 lakh</strong></li>
+          <li><span class="qs-label">Size from</span><strong>80 sq ft</strong></li>
+          <li><span class="qs-label">Availability</span><strong>Pan-India</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="split brand-split">
+
+    <div class="split-main">
+
+      <section class="sec" aria-labelledby="gal-h">
+        <h2 id="gal-h" class="sec-head">Gallery</h2>
+        <div class="gal">
+          <div class="gal-main">
+            <img id="gal-img" src="/assets/bg_light.webp" alt="Outlet front: image placeholder" width="800" height="480" loading="eager">
+            <span id="gal-label" class="gal-caption">Outlet front</span>
+          </div>
+          <div class="gal-thumbs" role="list" aria-label="Gallery thumbnails">
+            <button class="thumb on" data-src="/assets/bg_light.webp" data-label="Outlet front" data-full="Outlet front: image placeholder" role="listitem" type="button" aria-pressed="true">
+              <img src="/assets/bg_light.webp" alt="Outlet front thumbnail" width="120" height="72" loading="lazy">
+            </button>
+            <button class="thumb" data-src="/assets/bg_city.webp" data-label="Interior" data-full="Interior: image placeholder" role="listitem" type="button" aria-pressed="false">
+              <img src="/assets/bg_city.webp" alt="Interior thumbnail" width="120" height="72" loading="lazy">
+            </button>
+            <button class="thumb" data-src="/assets/bg_navy.webp" data-label="Products" data-full="Product display: image placeholder" role="listitem" type="button" aria-pressed="false">
+              <img src="/assets/bg_navy.webp" alt="Products thumbnail" width="120" height="72" loading="lazy">
+            </button>
+            <button class="thumb" data-src="/assets/bg_india.webp" data-label="Training" data-full="Team and training: image placeholder" role="listitem" type="button" aria-pressed="false">
+              <img src="/assets/bg_india.webp" alt="Training thumbnail" width="120" height="72" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" aria-labelledby="models-h">
+        <h2 id="models-h" class="sec-head">Outlet models</h2>
+        <div class="grid g3">
+          <article class="card">
+            <h3>Kiosk</h3>
+            <dl class="facts">
+              <div><dt>Investment</dt><dd>₹8 – 12 lakh</dd></div>
+              <div><dt>Franchise fee</dt><dd>₹2 lakh</dd></div>
+              <div><dt>Space required</dt><dd>80 – 150 sq ft</dd></div>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>Standard</h3>
+            <dl class="facts">
+              <div><dt>Investment</dt><dd>₹15 – 25 lakh</dd></div>
+              <div><dt>Franchise fee</dt><dd>₹3 lakh</dd></div>
+              <div><dt>Space required</dt><dd>300 – 500 sq ft</dd></div>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>Flagship</h3>
+            <dl class="facts">
+              <div><dt>Investment</dt><dd>₹30 – 45 lakh</dd></div>
+              <div><dt>Franchise fee</dt><dd>₹5 lakh</dd></div>
+              <div><dt>Space required</dt><dd>800 – 1,200 sq ft</dd></div>
+            </dl>
+          </article>
+        </div>
+        <p class="note" style="margin-top:16px">Figures are indicative, exclude GST and are set by the brand. FranchiseVista charges no fee to investors.</p>
+      </section>
+
+      <section class="sec" aria-labelledby="incl-h">
+        <h2 id="incl-h" class="sec-head">What is included</h2>
+        <ul class="checks two" aria-label="Inclusions">
+          <li>Brand licence and use of trademark</li>
+          <li>Initial stock and equipment supply</li>
+          <li>Store setup support and design guidelines</li>
+          <li>Pre-opening training programme</li>
+          <li>Centralised procurement network</li>
+          <li>Marketing collateral and digital assets</li>
+          <li>Ongoing operations support</li>
+          <li>Field visits from brand team</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <aside class="split-side sticky-side">
+      <div class="card form-card" id="enquiry-card">
+        <h2>Enquire about this franchise</h2>
+        <p>Our team will call you within one business day to discuss fit and next steps. We do not share your details with any brand without your consent.</p>
+        <form class="form" id="enquiry-form" novalidate>
+          <div class="fld">
+            <label for="e-name">Your name <abbr title="required">*</abbr></label>
+            <input class="in" id="e-name" name="name" type="text" autocomplete="name" required placeholder="Rahul Sharma">
+            <span class="err" id="e-name-err" aria-live="polite"></span>
+          </div>
+          <div class="fld">
+            <label for="e-phone">Mobile number <abbr title="required">*</abbr></label>
+            <input class="in" id="e-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+91 98765 43210">
+            <span class="err" id="e-phone-err" aria-live="polite"></span>
+          </div>
+          <div class="fld">
+            <label for="e-email">Email address <abbr title="required">*</abbr></label>
+            <input class="in" id="e-email" name="email" type="email" autocomplete="email" required placeholder="rahul@example.com">
+            <span class="err" id="e-email-err" aria-live="polite"></span>
+          </div>
+          <div class="fld">
+            <label for="e-city">City <abbr title="required">*</abbr></label>
+            <input class="in" id="e-city" name="city" type="text" required placeholder="Delhi">
+            <span class="err" id="e-city-err" aria-live="polite"></span>
+          </div>
+          <div class="fld">
+            <label for="e-model">Preferred model</label>
+            <select class="in" id="e-model" name="model">
+              <option value="">Select (optional)</option>
+              <option value="kiosk">Kiosk</option>
+              <option value="standard">Standard</option>
+              <option value="flagship">Flagship</option>
+            </select>
+          </div>
+          <button class="btn btn-gold" type="submit">Send enquiry</button>
+          <p class="form-note">No fee. No obligation. We call you first.</p>
+        </form>
+        <div class="ok-panel" id="enquiry-ok" hidden>
+          <img src="/assets/icon_consult.webp" alt="" width="64" height="64" loading="lazy">
+          <h3>We've received your enquiry</h3>
+          <p>Vikas Gupta will call you within one business day to discuss your interest in {brandName}.</p>
+          <p><a href="/find-a-franchise" class="btn btn-line">Browse more franchises</a></p>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+  // Gallery
+  const mainImg = document.getElementById('gal-img') as HTMLImageElement | null;
+  const mainLabel = document.getElementById('gal-label');
+  document.querySelectorAll<HTMLButtonElement>('.thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(t => {
+        t.classList.remove('on');
+        t.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('on');
+      btn.setAttribute('aria-pressed', 'true');
+      if (mainImg) {
+        mainImg.src = btn.dataset.src || '';
+        mainImg.alt = btn.dataset.full || '';
+      }
+      if (mainLabel) mainLabel.textContent = btn.dataset.label || '';
+    });
+  });
+
+  // Enquiry form
+  const form = document.getElementById('enquiry-form') as HTMLFormElement | null;
+  const okEl = document.getElementById('enquiry-ok');
+  const PHONE = /^(\+?91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}$/;
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const fields = [
+    { name: 'name', msg: 'Please enter your name' },
+    { name: 'phone', type: 'phone', msg: 'Please enter your mobile number' },
+    { name: 'email', type: 'email', msg: 'Please enter your email address' },
+    { name: 'city', msg: 'Please enter your city' },
+  ];
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const errors: Record<string, string> = {};
+    fields.forEach(({ name, type, msg }) => {
+      const v = ((form?.elements as HTMLFormControlsCollection & Record<string, HTMLInputElement>)[name]?.value || '').trim();
+      if (!v) errors[name] = msg;
+      else if (type === 'phone' && !PHONE.test(v)) errors[name] = 'Enter a valid 10-digit mobile number';
+      else if (type === 'email' && !EMAIL.test(v)) errors[name] = 'Enter a valid email address';
+    });
+
+    fields.forEach(({ name }) => {
+      const inp = document.getElementById(`e-${name}`);
+      const errEl = document.getElementById(`e-${name}-err`);
+      if (errors[name]) {
+        inp?.classList.add('has-error');
+        if (errEl) errEl.textContent = errors[name];
+      } else {
+        inp?.classList.remove('has-error');
+        if (errEl) errEl.textContent = '';
+      }
+    });
+
+    if (Object.keys(errors).length === 0) {
+      form.setAttribute('hidden', '');
+      okEl?.removeAttribute('hidden');
+    } else {
+      const first = document.querySelector('.has-error');
+      (first as HTMLElement)?.focus();
+    }
+  });
+</script>
+
+<style>
+  .breadcrumb ol { display:flex; gap:8px; list-style:none; padding:0; margin:0 0 16px; font-size:14px; }
+  .breadcrumb li:not(:last-child)::after { content:'/'; margin-left:8px; opacity:.5; }
+  .breadcrumb a { color:inherit; }
+  .brand-hero { display:flex; gap:32px; align-items:flex-start; }
+  .brand-tile-lg { width:88px; height:88px; min-width:88px; background:var(--navy,#0D1F3C); border-radius:12px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.12); }
+  .quick-stats { display:flex; gap:24px; flex-wrap:wrap; list-style:none; padding:0; margin:16px 0 0; }
+  .quick-stats li { display:flex; flex-direction:column; gap:2px; }
+  .qs-label { font-size:12px; opacity:.7; }
+  .quick-stats strong { font-size:18px; font-weight:700; }
+  .brand-split { display:grid; grid-template-columns:1fr 380px; gap:48px; align-items:start; padding:48px 0; }
+  .sticky-side { position:sticky; top:88px; }
+  .form-card { padding:32px; }
+  .form-note { font-size:13px; opacity:.7; margin-top:8px; text-align:center; }
+  .ok-panel { text-align:center; padding:16px 0; }
+  .ok-panel img { margin:0 auto 16px; display:block; }
+  @media (max-width:1024px) {
+    .brand-split { grid-template-columns:1fr; }
+    .sticky-side { position:static; }
+    .brand-hero { flex-direction:column; }
+  }
+  @media (max-width:640px) {
+    .quick-stats { gap:16px; }
+  }
+</style>
+
+</Layout>
