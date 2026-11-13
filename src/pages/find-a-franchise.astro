@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout
   title="Find a Franchise in India | Compare Brands | FranchiseVista"
@@ -69,7 +70,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="grid g3" id="brand-grid"></div>
     <div class="card empty" id="empty-state" hidden>
-      <img class="ico" src="/assets/icon_find.webp" alt="" width="64" height="64" loading="lazy">
+      <img class="ico" src={`${base}assets/icon_find.webp`} alt="" width="64" height="64" loading="lazy">
       <h3>No sample brands match these filters</h3>
       <p>Try a wider investment range or clear the city.</p>
       <button class="btn btn-navy btn-sm" id="empty-reset" type="button">Clear filters</button>
@@ -83,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
       <h2 id="cta-h">Not sure which franchise fits?</h2>
       <p class="lead">Tell us your budget and location and we will suggest brands to look at.</p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="/contact">Talk to us</a>
+        <a class="btn btn-gold" href={`${base}contact`}>Talk to us</a>
         <a class="btn btn-wa" href="https://wa.me/919667395517" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
       </div>
       <p class="cta-meta">
@@ -96,6 +97,7 @@ import Layout from '../layouts/Layout.astro';
 </section>
 
 <script>
+  const BASE = import.meta.env.BASE_URL;
   const ALL = [
     {cat:'Food & Beverage',lo:10,hi:15,inv:'₹10 – 15 lakh',fee:'₹2 lakh',sz:'200',size:'200 – 500 sq ft',where:'Pan-India'},
     {cat:'Retail',lo:20,hi:30,inv:'₹20 – 30 lakh',fee:'₹3 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Delhi NCR, Maharashtra'},
@@ -130,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
         <div><dt>Investment</dt><dd>${c.inv}</dd></div>
         <div><dt>Franchise fee</dt><dd>${c.fee}</dd></div>
       </dl>
-      <a class="btn btn-navy btn-sm" href="/franchise/sample-brand">Enquire<span class="sr"> about Sample Brand</span></a>
+      <a class="btn btn-navy btn-sm" href="${BASE}franchise/sample-brand">Enquire<span class="sr"> about Sample Brand</span></a>
     </article>`;
   }
 

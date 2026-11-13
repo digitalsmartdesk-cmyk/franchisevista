@@ -7,6 +7,7 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const brandName = slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+const base = import.meta.env.BASE_URL;
 ---
 <Layout
   title={`${brandName} Franchise | FranchiseVista`}
@@ -17,7 +18,7 @@ const brandName = slug.split('-').map((w: string) => w.charAt(0).toUpperCase() +
   <div class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <ol>
-        <li><a href="/find-a-franchise">Find a franchise</a></li>
+        <li><a href={`${base}find-a-franchise`}>Find a franchise</a></li>
         <li aria-current="page">{brandName}</li>
       </ol>
     </nav>
@@ -54,21 +55,21 @@ const brandName = slug.split('-').map((w: string) => w.charAt(0).toUpperCase() +
         <h2 id="gal-h" class="sec-head">Gallery</h2>
         <div class="gal">
           <div class="gal-main">
-            <img id="gal-img" src="/assets/bg_light.webp" alt="Outlet front: image placeholder" width="800" height="480" loading="eager">
+            <img id="gal-img" src={`${base}assets/bg_light.webp`} alt="Outlet front: image placeholder" width="800" height="480" loading="eager">
             <span id="gal-label" class="gal-caption">Outlet front</span>
           </div>
           <div class="gal-thumbs" role="list" aria-label="Gallery thumbnails">
-            <button class="thumb on" data-src="/assets/bg_light.webp" data-label="Outlet front" data-full="Outlet front: image placeholder" role="listitem" type="button" aria-pressed="true">
-              <img src="/assets/bg_light.webp" alt="Outlet front thumbnail" width="120" height="72" loading="lazy">
+            <button class="thumb on" data-src={`${base}assets/bg_light.webp`} data-label="Outlet front" data-full="Outlet front: image placeholder" role="listitem" type="button" aria-pressed="true">
+              <img src={`${base}assets/bg_light.webp`} alt="Outlet front thumbnail" width="120" height="72" loading="lazy">
             </button>
-            <button class="thumb" data-src="/assets/bg_city.webp" data-label="Interior" data-full="Interior: image placeholder" role="listitem" type="button" aria-pressed="false">
-              <img src="/assets/bg_city.webp" alt="Interior thumbnail" width="120" height="72" loading="lazy">
+            <button class="thumb" data-src={`${base}assets/bg_city.webp`} data-label="Interior" data-full="Interior: image placeholder" role="listitem" type="button" aria-pressed="false">
+              <img src={`${base}assets/bg_city.webp`} alt="Interior thumbnail" width="120" height="72" loading="lazy">
             </button>
-            <button class="thumb" data-src="/assets/bg_navy.webp" data-label="Products" data-full="Product display: image placeholder" role="listitem" type="button" aria-pressed="false">
-              <img src="/assets/bg_navy.webp" alt="Products thumbnail" width="120" height="72" loading="lazy">
+            <button class="thumb" data-src={`${base}assets/bg_navy.webp`} data-label="Products" data-full="Product display: image placeholder" role="listitem" type="button" aria-pressed="false">
+              <img src={`${base}assets/bg_navy.webp`} alt="Products thumbnail" width="120" height="72" loading="lazy">
             </button>
-            <button class="thumb" data-src="/assets/bg_india.webp" data-label="Training" data-full="Team and training: image placeholder" role="listitem" type="button" aria-pressed="false">
-              <img src="/assets/bg_india.webp" alt="Training thumbnail" width="120" height="72" loading="lazy">
+            <button class="thumb" data-src={`${base}assets/bg_india.webp`} data-label="Training" data-full="Team and training: image placeholder" role="listitem" type="button" aria-pressed="false">
+              <img src={`${base}assets/bg_india.webp`} alt="Training thumbnail" width="120" height="72" loading="lazy">
             </button>
           </div>
         </div>
@@ -159,10 +160,10 @@ const brandName = slug.split('-').map((w: string) => w.charAt(0).toUpperCase() +
           <p class="form-note">No fee. No obligation. We call you first.</p>
         </form>
         <div class="ok-panel" id="enquiry-ok" hidden>
-          <img src="/assets/icon_consult.webp" alt="" width="64" height="64" loading="lazy">
+          <img src={`${base}assets/icon_consult.webp`} alt="" width="64" height="64" loading="lazy">
           <h3>We've received your enquiry</h3>
           <p>Vikas Gupta will call you within one business day to discuss your interest in {brandName}.</p>
-          <p><a href="/find-a-franchise" class="btn btn-line">Browse more franchises</a></p>
+          <p><a href={`${base}find-a-franchise`} class="btn btn-line">Browse more franchises</a></p>
         </div>
       </div>
     </aside>

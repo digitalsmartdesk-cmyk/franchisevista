@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout
   title="Franchisee Lead Generation for Brands | FranchiseVista"
@@ -56,17 +57,17 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="grid g3">
       <div class="card stack" style="gap:16px">
-        <img class="ico" src="/assets/icon_find.webp" alt="" width="64" height="64" loading="lazy">
+        <img class="ico" src={`${base}assets/icon_find.webp`} alt="" width="64" height="64" loading="lazy">
         <h3>Generate</h3>
         <p>We bring investors to your brand through five lead channels.</p>
       </div>
       <div class="card stack" style="gap:16px">
-        <img class="ico" src="/assets/icon_research.webp" alt="" width="64" height="64" loading="lazy">
+        <img class="ico" src={`${base}assets/icon_research.webp`} alt="" width="64" height="64" loading="lazy">
         <h3>Qualify</h3>
         <p>We check capacity, funds, location, intent and timeline on a call.</p>
       </div>
       <div class="card stack" style="gap:16px">
-        <img class="ico" src="/assets/icon_contracts.webp" alt="" width="64" height="64" loading="lazy">
+        <img class="ico" src={`${base}assets/icon_contracts.webp`} alt="" width="64" height="64" loading="lazy">
         <h3>Close</h3>
         <p>We present your offer, arrange brand calls and visits, negotiate within your terms and take the deal to signature.</p>
       </div>
@@ -102,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="tl-i"><span class="tl-tag">For 8 months</span><h3>Protected</h3><p>Credited leads stay protected for eight months.</p></div>
     </div>
     <div class="card card-pale" style="margin-top:40px;display:flex;gap:16px;align-items:center">
-      <img class="ico ico-sm" src="/assets/icon_contracts.webp" alt="" width="48" height="48" loading="lazy">
+      <img class="ico ico-sm" src={`${base}assets/icon_contracts.webp`} alt="" width="48" height="48" loading="lazy">
       <p style="font-weight:600;color:#0B2D5B">If a credit is disputed, we settle it on evidence.</p>
     </div>
   </div>
@@ -115,7 +116,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="eyebrow">Simple fees</span>
         <h2 id="fees-h">A small token per lead. A success fee only on signing.</h2>
         <div class="card token" style="padding:20px 24px">
-          <img class="ico ico-sm" src="/assets/icon_invest.webp" alt="" width="48" height="48" loading="lazy">
+          <img class="ico ico-sm" src={`${base}assets/icon_invest.webp`} alt="" width="48" height="48" loading="lazy">
           <div>
             <b>₹500</b>
             <p>per valid lead, credited against your success fee.</p>
@@ -157,12 +158,12 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="grid g2">
       <div class="card stack" style="gap:14px">
-        <img class="ico" src="/assets/icon_consult.webp" alt="" width="64" height="64" loading="lazy">
+        <img class="ico" src={`${base}assets/icon_consult.webp`} alt="" width="64" height="64" loading="lazy">
         <h3>Weekly dashboard</h3>
         <p>Leads received, qualification status, calls and visits scheduled, and deals in negotiation.</p>
       </div>
       <div class="card stack" style="gap:14px">
-        <img class="ico" src="/assets/icon_grow.webp" alt="" width="64" height="64" loading="lazy">
+        <img class="ico" src={`${base}assets/icon_grow.webp`} alt="" width="64" height="64" loading="lazy">
         <h3>Monthly review</h3>
         <p>A call to review the pipeline, adjust channels and plan the month ahead.</p>
       </div>
@@ -263,7 +264,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="form-foot">
             <button class="btn btn-gold btn-block" type="submit">Request a call-back</button>
-            <p class="note">We use these details only to contact you about FranchiseVista. See our <a href="/privacy">Privacy and Disclaimer</a>.</p>
+            <p class="note">We use these details only to contact you about FranchiseVista. See our <a href={`${base}privacy`}>Privacy and Disclaimer</a>.</p>
           </div>
         </form>
       </div>

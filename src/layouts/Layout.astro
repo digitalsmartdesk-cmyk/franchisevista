@@ -5,6 +5,7 @@ interface Props {
   currentPage?: string;
 }
 const { title, description, currentPage = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
 <html lang="en">
@@ -16,7 +17,7 @@ const { title, description, currentPage = '' } = Astro.props;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href={`${base}styles/global.css`}>
 </head>
 <body>
 <div class="page">
@@ -24,16 +25,16 @@ const { title, description, currentPage = '' } = Astro.props;
 <header class="nav">
   <div class="wrap">
     <div class="nav-in">
-      <a class="nav-logo" href="/" aria-label="FranchiseVista home">
-        <img src="/assets/logo_on_dark.webp" alt="FranchiseVista" width="162" height="54">
+      <a class="nav-logo" href={base} aria-label="FranchiseVista home">
+        <img src={`${base}assets/logo_on_dark.webp`} alt="FranchiseVista" width="162" height="54">
       </a>
       <nav class="nav-links" aria-label="Main">
-        <a href="/" aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
-        <a href="/for-brands" aria-current={currentPage === 'for-brands' ? 'page' : undefined}>For Brands</a>
-        <a href="/find-a-franchise" aria-current={currentPage === 'find' ? 'page' : undefined}>Find a Franchise</a>
-        <a href="/about" aria-current={currentPage === 'about' ? 'page' : undefined}>About</a>
+        <a href={base} aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
+        <a href={`${base}for-brands`} aria-current={currentPage === 'for-brands' ? 'page' : undefined}>For Brands</a>
+        <a href={`${base}find-a-franchise`} aria-current={currentPage === 'find' ? 'page' : undefined}>Find a Franchise</a>
+        <a href={`${base}about`} aria-current={currentPage === 'about' ? 'page' : undefined}>About</a>
       </nav>
-      <a class="btn btn-gold" href="/contact" aria-current={currentPage === 'contact' ? 'page' : undefined}>Talk to us</a>
+      <a class="btn btn-gold" href={`${base}contact`} aria-current={currentPage === 'contact' ? 'page' : undefined}>Talk to us</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
         <svg id="burger-open" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16"/>
@@ -45,12 +46,12 @@ const { title, description, currentPage = '' } = Astro.props;
     </div>
   </div>
   <nav class="nav-menu" id="nav-menu" aria-label="Mobile">
-    <a class="m" href="/" aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
-    <a class="m" href="/for-brands" aria-current={currentPage === 'for-brands' ? 'page' : undefined}>For Brands</a>
-    <a class="m" href="/find-a-franchise" aria-current={currentPage === 'find' ? 'page' : undefined}>Find a Franchise</a>
-    <a class="m" href="/about" aria-current={currentPage === 'about' ? 'page' : undefined}>About</a>
-    <a class="m" href="/contact" aria-current={currentPage === 'contact' ? 'page' : undefined}>Contact</a>
-    <a class="btn btn-gold" href="/contact">Talk to us</a>
+    <a class="m" href={base} aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
+    <a class="m" href={`${base}for-brands`} aria-current={currentPage === 'for-brands' ? 'page' : undefined}>For Brands</a>
+    <a class="m" href={`${base}find-a-franchise`} aria-current={currentPage === 'find' ? 'page' : undefined}>Find a Franchise</a>
+    <a class="m" href={`${base}about`} aria-current={currentPage === 'about' ? 'page' : undefined}>About</a>
+    <a class="m" href={`${base}contact`} aria-current={currentPage === 'contact' ? 'page' : undefined}>Contact</a>
+    <a class="btn btn-gold" href={`${base}contact`}>Talk to us</a>
   </nav>
 </header>
 
@@ -62,18 +63,18 @@ const { title, description, currentPage = '' } = Astro.props;
   <div class="wrap">
     <div class="foot-grid">
       <div class="stack">
-        <img src="/assets/logo_on_dark.webp" alt="FranchiseVista" width="180" height="60" loading="lazy">
+        <img src={`${base}assets/logo_on_dark.webp`} alt="FranchiseVista" width="180" height="60" loading="lazy">
         <p>Franchise consulting and lead generation. We help brands appoint franchisees and help investors find the right franchise.</p>
       </div>
       <div>
         <h2>Pages</h2>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/for-brands">For Brands</a></li>
-          <li><a href="/find-a-franchise">Find a Franchise</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/privacy">Privacy and Disclaimer</a></li>
+          <li><a href={base}>Home</a></li>
+          <li><a href={`${base}for-brands`}>For Brands</a></li>
+          <li><a href={`${base}find-a-franchise`}>Find a Franchise</a></li>
+          <li><a href={`${base}about`}>About</a></li>
+          <li><a href={`${base}contact`}>Contact</a></li>
+          <li><a href={`${base}privacy`}>Privacy and Disclaimer</a></li>
         </ul>
       </div>
       <div>

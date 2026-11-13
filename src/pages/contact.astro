@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout
   title="Contact FranchiseVista | Franchise Consulting India"
@@ -59,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
           <button class="btn btn-gold" type="submit">Send message</button>
         </form>
         <div class="ok-panel" id="contact-ok" hidden aria-live="polite">
-          <img src="/assets/icon_consult.webp" alt="" width="64" height="64" loading="lazy">
+          <img src={`${base}assets/icon_consult.webp`} alt="" width="64" height="64" loading="lazy">
           <h3>Message received</h3>
           <p>Vikas Gupta will call you within one business day.</p>
         </div>
@@ -98,8 +99,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="card card-pale notice-card">
           <div class="notice-row">
-            <img src="/assets/icon_diligence.webp" alt="" width="40" height="40" loading="lazy">
-            <img src="/assets/icon_location.webp" alt="" width="40" height="40" loading="lazy">
+            <img src={`${base}assets/icon_diligence.webp`} alt="" width="40" height="40" loading="lazy">
+            <img src={`${base}assets/icon_location.webp`} alt="" width="40" height="40" loading="lazy">
           </div>
           <p><strong>Brands and investors both get a call-back from our team.</strong></p>
           <p class="note">We do not share your contact details with any brand or investor without your consent.</p>
@@ -118,17 +119,17 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="grid g3">
       <article class="card office-card">
-        <img src="/assets/icon_location.webp" alt="" width="40" height="40" loading="lazy">
+        <img src={`${base}assets/icon_location.webp`} alt="" width="40" height="40" loading="lazy">
         <h3>Noida</h3>
         <address>Ithum, Sector 62<br>Noida, Uttar Pradesh</address>
       </article>
       <article class="card office-card">
-        <img src="/assets/icon_location.webp" alt="" width="40" height="40" loading="lazy">
+        <img src={`${base}assets/icon_location.webp`} alt="" width="40" height="40" loading="lazy">
         <h3>Bengaluru</h3>
         <address>Cinnabar Hills<br>Bengaluru, Karnataka</address>
       </article>
       <article class="card office-card">
-        <img src="/assets/icon_location.webp" alt="" width="40" height="40" loading="lazy">
+        <img src={`${base}assets/icon_location.webp`} alt="" width="40" height="40" loading="lazy">
         <h3>Mumbai</h3>
         <address>Raheja Platinum<br>Mumbai, Maharashtra</address>
       </article>
