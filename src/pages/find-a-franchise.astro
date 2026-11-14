@@ -65,7 +65,7 @@ const base = import.meta.env.BASE_URL;
 <section class="sec" style="padding-top:48px" aria-labelledby="res-h">
   <div class="wrap">
     <div class="count">
-      <h2 id="res-h" style="font-size:22px"><span id="count-text">Showing 9 sample brands</span></h2>
+      <h2 id="res-h" style="font-size:22px"><span id="count-text">Showing 12 sample brands</span></h2>
       <span class="note">Sample content. Figures are indicative, exclude GST and are set by each brand.</span>
     </div>
     <div class="grid g3" id="brand-grid"></div>
@@ -88,7 +88,6 @@ const base = import.meta.env.BASE_URL;
         <a class="btn btn-wa" href="https://wa.me/919667395517" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
       </div>
       <p class="cta-meta">
-        <span>Vikas Gupta</span>
         <a href="tel:+919667395517">+91 96673 95517</a>
         <a href="mailto:franchisevista@growthoriginator.in">franchisevista@growthoriginator.in</a>
       </p>
@@ -99,15 +98,18 @@ const base = import.meta.env.BASE_URL;
 <script>
   const BASE = import.meta.env.BASE_URL;
   const ALL = [
-    {cat:'Food & Beverage',lo:10,hi:15,inv:'₹10 – 15 lakh',fee:'₹2 lakh',sz:'200',size:'200 – 500 sq ft',where:'Pan-India'},
-    {cat:'Retail',lo:20,hi:30,inv:'₹20 – 30 lakh',fee:'₹3 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Delhi NCR, Maharashtra'},
-    {cat:'Education',lo:8,hi:12,inv:'₹8 – 12 lakh',fee:'₹1.5 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Pan-India'},
-    {cat:'Health & Wellness',lo:25,hi:40,inv:'₹25 – 40 lakh',fee:'₹5 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Karnataka, Maharashtra'},
-    {cat:'Services',lo:5,hi:8,inv:'₹5 – 8 lakh',fee:'₹1 lakh',sz:'u200',size:'Under 200 sq ft',where:'Pan-India'},
-    {cat:'Fitness',lo:35,hi:100,inv:'₹35 lakh – 1 crore',fee:'₹7.5 lakh',sz:'1000',size:'Above 1,000 sq ft',where:'Delhi NCR, Karnataka'},
-    {cat:'Food & Beverage',lo:4,hi:7,inv:'₹4 – 7 lakh',fee:'₹1 lakh',sz:'u200',size:'Under 200 sq ft',where:'Pan-India'},
-    {cat:'Retail',lo:50,hi:80,inv:'₹50 – 80 lakh',fee:'₹6 lakh',sz:'1000',size:'Above 1,000 sq ft',where:'Maharashtra'},
-    {cat:'Education',lo:15,hi:22,inv:'₹15 – 22 lakh',fee:'₹2.5 lakh',sz:'200',size:'200 – 500 sq ft',where:'Karnataka'}
+    {name:'Sample Brand A',cat:'Food & Beverage',desc:'Quick-service café with a compact menu and a small counter format.',lo:10,hi:15,inv:'₹10 – 15 lakh',fee:'₹2 lakh',sz:'200',size:'200 – 500 sq ft',where:'Pan-India'},
+    {name:'Sample Brand B',cat:'Retail',desc:'Lifestyle accessories store for high streets and malls.',lo:20,hi:30,inv:'₹20 – 30 lakh',fee:'₹3.2 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Delhi NCR, Maharashtra'},
+    {name:'Sample Brand C',cat:'Education',desc:'After-school learning centre for primary grades.',lo:8,hi:12,inv:'₹8 – 12 lakh',fee:'₹1.5 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Pan-India'},
+    {name:'Sample Brand D',cat:'Health & Wellness',desc:'Diagnostics and wellness clinic run with a partner doctor.',lo:25,hi:40,inv:'₹25 – 40 lakh',fee:'₹5 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Karnataka, Maharashtra'},
+    {name:'Sample Brand E',cat:'Services',desc:'Home-services booking brand run from a small office.',lo:5,hi:8,inv:'₹5 – 8 lakh',fee:'₹1 lakh',sz:'u200',size:'Under 200 sq ft',where:'Pan-India'},
+    {name:'Sample Brand F',cat:'Fitness',desc:'Neighbourhood gym with strength and group-class zones.',lo:35,hi:100,inv:'₹35 lakh – 1 crore',fee:'₹7.5 lakh',sz:'1000',size:'Above 1,000 sq ft',where:'Delhi NCR, Karnataka'},
+    {name:'Sample Brand G',cat:'Food & Beverage',desc:'Street-food kiosk with a short, fast menu.',lo:4,hi:7,inv:'₹4 – 7 lakh',fee:'₹1 lakh',sz:'u200',size:'Under 200 sq ft',where:'Pan-India'},
+    {name:'Sample Brand H',cat:'Retail',desc:'Large-format home and furniture showroom.',lo:50,hi:80,inv:'₹50 – 80 lakh',fee:'₹6 lakh',sz:'1000',size:'Above 1,000 sq ft',where:'Maharashtra'},
+    {name:'Sample Brand I',cat:'Education',desc:'Skill-training institute for job-ready courses.',lo:15,hi:22,inv:'₹15 – 22 lakh',fee:'₹2.4 lakh',sz:'200',size:'200 – 500 sq ft',where:'Karnataka'},
+    {name:'Sample Brand J',cat:'Health & Wellness',desc:'Pharmacy and wellness store with a loyalty programme.',lo:18,hi:28,inv:'₹18 – 28 lakh',fee:'₹3.5 lakh',sz:'200',size:'200 – 500 sq ft',where:'Delhi NCR, Maharashtra'},
+    {name:'Sample Brand K',cat:'Services',desc:'Laundry and dry-cleaning outlets with home pickup.',lo:12,hi:18,inv:'₹12 – 18 lakh',fee:'₹2.2 lakh',sz:'200',size:'200 – 500 sq ft',where:'Delhi NCR'},
+    {name:'Sample Brand L',cat:'Fitness',desc:'Yoga and wellness studio for city neighbourhoods.',lo:9,hi:14,inv:'₹9 – 14 lakh',fee:'₹2.8 lakh',sz:'500',size:'500 – 1,000 sq ft',where:'Karnataka, Maharashtra'}
   ];
   const BANDS = {u10:[0,10],'10':[10,25],'25':[25,50],'50':[50,1e9]};
   const TILE_SVG = `<svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#F5A000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></svg>`;
@@ -126,13 +128,14 @@ const base = import.meta.env.BASE_URL;
         <div class="tile" role="img" aria-label="Sample brand logo tile">${TILE_SVG}</div>
         <span class="chip">${c.cat}</span>
       </div>
-      <h3>Sample Brand</h3>
+      <h3>${c.name}</h3>
+      <p class="note">${c.desc}</p>
       <p class="note">${c.where} &middot; ${c.size}</p>
       <dl class="facts">
         <div><dt>Investment</dt><dd>${c.inv}</dd></div>
         <div><dt>Franchise fee</dt><dd>${c.fee}</dd></div>
       </dl>
-      <a class="btn btn-navy btn-sm" href="${BASE}franchise/sample-brand">Enquire<span class="sr"> about Sample Brand</span></a>
+      <a class="btn btn-navy btn-sm" href="${BASE}franchise/sample-brand">Enquire<span class="sr"> about ${c.name}</span></a>
     </article>`;
   }
 
